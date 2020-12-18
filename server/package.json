@@ -1,0 +1,19 @@
+{
+  "name": "server-budget",
+  "version": "1.0.0",
+  "description": "Challenge from Alkemy",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node src/index.js",
+    "devStart": "nodemon src/index.js"
+  },
+  "author": "Cristhian Daniel Strokol",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
