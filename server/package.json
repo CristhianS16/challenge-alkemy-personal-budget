@@ -4,12 +4,13 @@
   "description": "Challenge from Alkemy",
   "main": "index.js",
   "scripts": {
-    "start" : "node src/index.js",
+    "start": "node src/index.js",
     "devStart": "nodemon src/index.js"
   },
   "author": "Cristhian Daniel Strokol",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1"
   },
