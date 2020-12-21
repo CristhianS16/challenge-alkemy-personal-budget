@@ -3,7 +3,7 @@ const mysqlConnection = require('../database');
 const router = express.Router();
 
 router.get('/get/expenses', (req,res) => {
-    mysqlConnection.query('select * from expenses', (err, rows, fields) => {
+    mysqlConnection.query('select * from expenses;', (err, rows, fields) => {
         if(!err){
             res.json(rows);
         } else {
