@@ -1,22 +1,5 @@
 ## Available Scripts
 
-## First step
-
-For installing dependencies, you can run in the server directory:
-
-### `npm install`
-
-## Inicializate the server
-
-In the server directory, you can run:
-
-### `npm run devStart`
-
-This run the server in the development mode.
-Open [https//localhost:4000] (http://localhost:4000) to view the server in your browser.
-
-In the client directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
