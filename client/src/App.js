@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,16 +7,26 @@ import {
 import './App.css';
 import Header from './components/Header';
 import Operations from './components/Operations';
+import EditOperation from './components/EditOperation';
 import Home from './components/Home';
+import Footer from './components/Footer';
 
 function App() {
 
+  // States
   const [title, setTitle] = useState('');
+  const [viewSpinner, setViewSpinner] = useState(false);
+  const [viewError, setViewError] = useState(false);
+  const [totalBudget, setTotalBudget] = useState(0);
+
+  useEffect( () => {
+    document.title = `Personal Budget | ${title}`;
+  });
 
   return (
     <Router>
-      <div className="container">
-        <div className="row">
+      <div className="container-fluid">
+        <div className="row p-5">
           <Header 
             title = {title}
           />
@@ -24,20 +34,33 @@ function App() {
             <Route path="/operations">
               <Operations 
                 setTitle = {setTitle}
+                setTotalBudget = {setTotalBudget}
+                totalBudget = {totalBudget}
+                viewSpinner = {viewSpinner}
+                setViewSpinner = {setViewSpinner}
+                viewError = {viewError}
+                setViewError = {setViewError}
+              />
+            </Route>
+            <Route path="/edit">
+              <EditOperation 
+                setTitle = {setTitle}
               />
             </Route>
             <Route path="/">
               <Home 
                 setTitle = {setTitle}
+                totalBudget = {totalBudget}
+                setTotalBudget = {setTotalBudget}
+                viewSpinner = {viewSpinner}
+                setViewSpinner = {setViewSpinner}
+                viewError = {viewError}
+                setViewError = {setViewError}
               />
             </Route>
           </Switch>
         </div>
-        <div className="row">
-        <footer className="col-12 bg-dark text-white">
-          <h1>Esto es el footer</h1>
-        </footer>
-        </div>
+        <Footer />
       </div>
     </Router>
   );
