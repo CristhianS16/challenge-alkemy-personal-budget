@@ -1,0 +1,31 @@
+{
+  "name": "personal-budget",
+  "version": "1.0.0",
+  "description": "Challenge from Alkemy",
+  "main": "/",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server/src/index.js",
+    "start": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build": "cd client && yarn build",
+    "serve": "cross-env NODE_ENV=production node server/src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "react-bootstrap": "^1.4.0",
+    "react-hook-form": "^6.13.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
