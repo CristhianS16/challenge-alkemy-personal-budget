@@ -7,7 +7,7 @@
     "client": "cd client && yarn start",
     "server": "nodemon server/src/index.js",
     "start": "cross-env NODE_ENV=development concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "build": "cd client && yarn build",
+    "build": "cd client && npm build",
     "serve": "cross-env NODE_ENV=production node server/src/index.js"
   },
   "author": "",
