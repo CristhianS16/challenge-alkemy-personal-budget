@@ -2,12 +2,13 @@ CREATE PROCEDURE `incomeCRUD`(
 	IN _id INT,
     IN _concept VARCHAR(45),
     IN _amount INT,
-    IN _date VARCHAR(20)
+    IN _date VARCHAR(20),
+    IN _type VARCHAR(45)
 )
 BEGIN
 	IF _id = 0 THEN
-		INSERT INTO income (concept, amount, date)
-        VALUES (_concept, _amount, _date);
+		INSERT INTO income (concept, amount, date, type)
+        VALUES (_concept, _amount, _date, _type);
         SET _id = last_insert_id();
 	ELSE
 		UPDATE income

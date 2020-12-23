@@ -7,6 +7,7 @@ CREATE TABLE income (
 	concept VARCHAR(45) DEFAULT NULL,
     amount INT(11) NOT NULL,
     date VARCHAR(20) NOT NULL,
+    type VARCHAR(45) NOT NULL,
     PRIMARY KEY(id)
 );
 CREATE TABLE expenses (
@@ -14,6 +15,7 @@ CREATE TABLE expenses (
 	concept VARCHAR(45) DEFAULT NULL,
     amount INT(11) NOT NULL,
     date VARCHAR(20) NOT NULL,
+    type VARCHAR(45) NOT NULL,
     PRIMARY KEY(id)
 );
 
