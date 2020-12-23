@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 if(env === 'production'){
-    app.use('/', express.static('.../client/build'));
+    app.use('/', express.static('../../client/build'));
 };
 
 // Routes
