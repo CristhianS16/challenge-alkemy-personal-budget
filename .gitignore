@@ -1,4 +1,6 @@
-
+node_modules/
+client/
+yarn.lock
 # Created by https://www.toptal.com/developers/gitignore/api/linux,visualstudiocode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,visualstudiocode,node
 
