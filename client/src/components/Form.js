@@ -4,12 +4,9 @@ import { useForm } from 'react-hook-form';
 import moment from 'moment';
 import Axios from 'axios';
 
-const FormComponent = (props) => {
-
-    const {updateList, setUpdateList, setViewSpinner, setTotalBudget, totalBudget} = props
+const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudget, totalBudget}) => {
 
     const { register, handleSubmit, errors} = useForm();
-
     
     const onSubmit = data => {
       const {concept, amount, date, type} = data;

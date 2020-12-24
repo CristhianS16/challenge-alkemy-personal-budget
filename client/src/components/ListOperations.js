@@ -17,7 +17,7 @@ const ListOperations = ({dataOperation, updateList,setUpdateList}) => {
                   const concept = operation.concept;
                   const amount = operation.amount;
                   const date = (operation.date).split('/').reverse().join('-');
-                  window.location.href = `http://localhost:3000/edit?id=${id}&type=${type}&concept=${concept}&amount=${amount}&date=${date}`;
+                  window.location.href = `/edit?id=${id}&type=${type}&concept=${concept}&amount=${amount}&date=${date}`;
                 }
               }>&#x2710; Edit</button>
               <button className="btn-sm btn-danger ml-1" onClick={
