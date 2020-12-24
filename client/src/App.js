@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
-import Operations from './components/Operations';
-import EditOperation from './components/EditOperation';
-import Home from './components/Home';
+import Operations from './pages/Operations';
+import EditOperation from './pages/EditOperation';
+import Home from './pages/Home';
 import Footer from './components/Footer';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
   useEffect( () => {
     document.title = `Personal Budget | ${title}`;
-  });
+  }, [title]);
 
   return (
     <Router>
