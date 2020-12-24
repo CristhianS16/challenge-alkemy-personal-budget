@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+};
+
 const express = require('express');
 const cors = require('cors');
 const app = express();
@@ -13,5 +17,6 @@ app.use('/api/', require('./routes/income'));
 app.use('/api/', require('./routes/expenses'));
 
 app.listen(app.get('port'), () => {
+    console.log(process.env.NODE_ENV + ' mode');
     console.log('Server on port ' + app.get('port'));
 });
