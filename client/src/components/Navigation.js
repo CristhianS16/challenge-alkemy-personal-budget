@@ -10,7 +10,7 @@ const Navigation = ({title}) => {
           <Navbar.Collapse animation="false" id="responsive-navbar-nav">
             <Nav className="ml-auto">
               <Nav.Link as={Link} to="/">Home</Nav.Link>
-              <Nav.Link as={Link} to ="operations">Operations</Nav.Link>
+              <Nav.Link as={Link} to ="/operations">Operations</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

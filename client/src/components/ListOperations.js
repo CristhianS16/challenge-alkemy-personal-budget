@@ -22,7 +22,7 @@ const ListOperations = ({dataOperation, updateList,setUpdateList}) => {
               }>&#x2710; Edit</button>
               <button className="btn-sm btn-danger ml-1" onClick={
                 async () => {
-                  const url = `/api/delete/${operation.type}/${operation.id}/`;
+                  const url = `https://budget-server-alkemy.herokuapp.com/api/delete/${operation.type}/${operation.id}/`;
                   await Axios.delete(url);
 
                   setUpdateList(updateList + 1);

@@ -33,7 +33,7 @@ const EditOperation = ({ setTitle }) => {
   };
 
   const updateOperation = async (data) => {
-    const url = `/api/put/${type}/${id}/`;
+    const url = `https://budget-server-alkemy.herokuapp.com/api/put/${type}/${id}/`;
 
     try {
       await Axios.put(url, data);

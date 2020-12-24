@@ -22,7 +22,7 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
     };
     
     const newOperation = async (data, type) => {
-      const url = (`/api/post/${type}/`);
+      const url = (`https://budget-server-alkemy.herokuapp.com/api/post/${type}/`);
       data.type = type;
       const totalSum = parseInt(totalBudget) + parseInt(data.amount);
       const totalSub = parseInt(totalBudget) - parseInt(data.amount);
