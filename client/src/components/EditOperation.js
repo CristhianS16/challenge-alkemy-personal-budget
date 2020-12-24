@@ -57,6 +57,10 @@ const EditOperation = ({ setTitle }) => {
                 defaultValue={concept}
                 ref={register({
                   required: true,
+                  pattern: {
+                    value: /^[A-Za-z\s]+$/,
+                    message: 'Please, dont enter numbers',
+                  },
                   maxLength: {
                     value: 45,
                     message: "The max length is 45 chars.",
@@ -75,6 +79,10 @@ const EditOperation = ({ setTitle }) => {
                 defaultValue={amount}
                 ref={register({
                   required: true,
+                  min: {
+                    value: 0,
+                    message: 'Please, enter a no-negative number.'
+                  },
                   maxLength: {
                     value: 11,
                     message: "Please, enter a number with 11 digits.",
