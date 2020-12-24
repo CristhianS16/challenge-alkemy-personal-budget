@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import FormComponent from "./Form";
-import ListOperations from "./ListOperations";
-import Spinner from "./Spinner";
-import Error from "./Error";
+import FormComponent from "../components/Form";
+import ListOperations from "../components/ListOperations";
+import Spinner from "../components/Spinner";
+import Error from "../components/Error";
 import { Table } from "react-bootstrap";
 import {getOperations} from "../helpers/getDataOperations";
 
-const Operations = (props) => {
-
-  const { setTitle, setTotalBudget, totalBudget, viewSpinner, setViewSpinner, viewError, setViewError} = props;
+const Operations = ({ setTitle, setTotalBudget, totalBudget, viewSpinner, setViewSpinner, viewError, setViewError}) => {
 
   const [view, setView] = useState('income');
   const [updateList, setUpdateList] = useState(0);
@@ -32,7 +30,13 @@ const Operations = (props) => {
     };
     
     getDataOperations();
-  }, [limitData, setTitle, setViewError, setViewSpinner, updateList, view]);
+  }, [ limitData,setTitle, setViewError, setViewSpinner, updateList, view]);
+
+  function handleChangeType(view){
+    setView(view);
+    setViewSpinner(true);
+    setUpdateList(updateList + 1);
+  };
 
 
   return (
@@ -53,16 +57,12 @@ const Operations = (props) => {
           <ul className="row d-flex flex-row justify-content-center list-group">
               <button autoFocus type="button" className="col-6 list-group-item list-group-item-success btn btn-success cursor" onClick={
                 () => {
-                  setView('income');
-                  setViewSpinner(true);
-                  setUpdateList(updateList + 1);
+                  handleChangeType('income');
                 }
               }>Income</button>
               <button className="col-6 list-group-item list-group-item-danger btn btn-danger cursor" onClick={
                 () => {
-                  setView('expenses');
-                  setViewSpinner(true);
-                  setUpdateList(updateList + 1);
+                  handleChangeType('expenses');
                 }
               }>Expenses</button>
           </ul>
@@ -70,18 +70,13 @@ const Operations = (props) => {
               <span className="col-12 bg-dark text-white py-2">Choose the number of operations you want to see</span>
           </div>
           <div className="row">
-              <input type="number" defaultValue="10" min="1" className="col-6" onChange={
+              <input type="number" defaultValue="10" min="1" className="col-12" onChange={
                 (e) => {
-                  setLimitData(e.target.value);
-                }
-              }></input>
-              <button className="col-6 btn btn-primary" onClick={
-                () => {
-                  if(!(Number(limitData) < 0)){
-                    setUpdateList(updateList + 1);
+                  if(!(Number(e.target.value) < 0)){
+                    setLimitData(Number(e.target.value));
                   }
                 }
-              }>Get data</button>
+              }></input>
           </div>
           <div className="row">
             <Table className="col-12" striped bordered hover responsive variant="light" size="sm">

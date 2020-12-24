@@ -37,7 +37,7 @@ const EditOperation = ({ setTitle }) => {
 
     try {
       await Axios.put(url, data);
-      window.location.href = "http://localhost:3000/operations"
+      window.location.href = "/operations"
     } catch (error) {
       console.log(error);
     };

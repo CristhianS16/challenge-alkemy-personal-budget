@@ -1,12 +1,10 @@
 import React, { useEffect, useState} from "react";
 import { Table } from "react-bootstrap";
-import Error from "./Error";
-import Spinner from "./Spinner";
+import Error from "../components/Error";
+import Spinner from "../components/Spinner";
 import {getTotal} from "../helpers/getDataHome";
 
-const Home = (props) => {
-
-  const {setTitle, totalBudget, setTotalBudget, viewSpinner, setViewSpinner, viewError, setViewError} = props;
+const Home = ({setTitle, totalBudget, setTotalBudget, viewSpinner, setViewSpinner, viewError, setViewError}) => {
 
   const [lastMovements, setLastMovements] = useState([]);
 
