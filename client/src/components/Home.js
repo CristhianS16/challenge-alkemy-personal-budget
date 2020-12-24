@@ -49,9 +49,9 @@ const Home = (props) => {
             </h3>
           </hgroup>
           <div className="col-11 border rounded mx-auto mt-3 pt-2">
-            <h3>Last Movements</h3>
+            <h3>Last movements registered</h3>
             <div>
-              <Table striped bordered hover variant="light" size="sm">
+              <Table striped bordered hover responsive variant="light" size="sm">
                 <thead className="thead-dark">
                   <tr>
                     <th>Concept</th>

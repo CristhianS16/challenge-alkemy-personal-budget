@@ -50,7 +50,7 @@ const Operations = (props) => {
       <div className="col-11 border rounded mx-auto mt-3 pt-2">
         <h3>List to registered operations</h3>
         <div>
-          <ul className="row d-flex flex-row list-group">
+          <ul className="row d-flex flex-row justify-content-center list-group">
               <button autoFocus type="button" className="col-6 list-group-item list-group-item-success btn btn-success cursor" onClick={
                 () => {
                   setView('income');
@@ -84,7 +84,7 @@ const Operations = (props) => {
               }>Get data</button>
           </div>
           <div className="row">
-            <Table className="col-12" striped bordered hover variant="light" size="sm">
+            <Table className="col-12" striped bordered hover responsive variant="light" size="sm">
               <thead className="thead-dark">
                 <tr>
                   <th>Concept</th>
