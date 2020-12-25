@@ -2,8 +2,8 @@ import Axios from 'axios';
 
 // Service for home
 export async function getTotal () {
-    const urlTotalIncome = '/api/get/lastmovements/totalincome';
-    const urlTotalExpenses = '/api/get/lastmovements/totalexpenses';
+    const urlTotalIncome = 'https://budget-server-alkemy.herokuapp.com/api/get/lastmovements/totalincome';
+    const urlTotalExpenses = 'https://budget-server-alkemy.herokuapp.com/api/get/lastmovements/totalexpenses';
     try {
       const resTotalIncome = await Axios.get(urlTotalIncome);
       const totalIncome = resTotalIncome.data[0].totalIncome;
@@ -17,7 +17,7 @@ export async function getTotal () {
     }
 }
 async function getLastMovements () {
-    const url = '/api/get/lastmovements';
+    const url = 'https://budget-server-alkemy.herokuapp.com/api/get/lastmovements';
     try {
         const res = await Axios.get(url);
         const movements = res.data;
