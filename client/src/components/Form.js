@@ -118,8 +118,8 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
                 required: true
             })}>
                 <option disabled>Choose a type of operation</option>
-                <option id="income">Income</option>
-                <option id="expenses">Expenses</option>
+                <option translate="no" id="income">Income</option>
+                <option translate="no" id="expenses">Expenses</option>
             </Form.Control>
           </Form.Group>
           <Button className="col-8" type="submit">Add new movement</Button>
