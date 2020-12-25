@@ -1,3 +1,7 @@
+## VIEW APP ON PRODUCTION HERE
+
+[https://personal-budget-alkemy.netlify.app/](https://personal-budget-alkemy.netlify.app/)
+
 ## First step
 
 Installing dependencies, into client and server folder, run this script:
