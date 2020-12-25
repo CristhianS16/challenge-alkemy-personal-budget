@@ -24,4 +24,4 @@ pool.getConnection( (err, connection) => {
     return;
 });
 
-module.exports = mysqlConnection;
+module.exports = pool;

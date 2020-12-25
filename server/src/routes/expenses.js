@@ -1,5 +1,5 @@
 const express = require('express');
-const mysqlConnection = require('../database');
+const pool = require('../database');
 const router = express.Router();
 
 router.get('/get/expenses/:until', (req,res) => {
@@ -7,7 +7,7 @@ router.get('/get/expenses/:until', (req,res) => {
     const query = `
       select * from expenses order by id asc limit ${until};
     `;
-    mysqlConnection.query(query, (err, rows, fields) => {
+    pool.query(query, (err, rows, fields) => {
         if(!err){
             res.json(rows);
         } else {
@@ -20,7 +20,7 @@ router.get('/get/expenses/operation/:id', (req,res) => {
     const query = `
       select * from expenses where id = ?;
     `;
-    mysqlConnection.query(query, [id], (err, rows, fields) => {
+    pool.query(query, [id], (err, rows, fields) => {
         if(!err){
             res.json(rows);
         } else {
@@ -34,7 +34,7 @@ router.post('/post/expenses', (req,res) => {
     const query = `
         call expensesABM(?, ?, ?, ?, ?);
     `;
-    mysqlConnection.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
+    pool.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
         if(!err){
             res.json({status: 'Expense Saved'});
         } else {
@@ -49,7 +49,7 @@ router.put('/put/expenses/:id', (req,res) => {
     const query = `
         call expensesABM(?, ?, ?, ?, ?);
     `;
-    mysqlConnection.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
+    pool.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
         if(!err) {
             res.json({status: 'Expense Updated'});
         } else {
@@ -63,7 +63,7 @@ router.delete('/delete/expenses/:id', (req,res) => {
     const query = `
         delete from expenses where id = ?;
     `;
-    mysqlConnection.query(query, [id], (err, rows, fields) => {
+    pool.query(query, [id], (err, rows, fields) => {
         if(!err){
             res.json({status: 'Expense Deleted'});
         } else {

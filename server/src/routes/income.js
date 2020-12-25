@@ -1,5 +1,5 @@
 const express = require('express');
-const mysqlConnection = require('../database');
+const pool = require('../database');
 const router = express.Router();
 
 router.get('/get/income/:until', (req,res) => {
@@ -7,7 +7,7 @@ router.get('/get/income/:until', (req,res) => {
     const query = `
       select * from income order by id asc limit ${until};
     `;
-    mysqlConnection.query(query, (err, rows, fields) => {
+    pool.query(query, (err, rows, fields) => {
         if(!err){
             res.json(rows);
         } else {
@@ -20,7 +20,7 @@ router.get('/get/income/operation/:id', (req,res) => {
     const query = `
       select * from income where id = ?;
     `;
-    mysqlConnection.query(query, [id], (err, rows, fields) => {
+    pool.query(query, [id], (err, rows, fields) => {
         if(!err){
             res.json(rows);
         } else {
@@ -33,7 +33,7 @@ router.post('/post/income', (req,res) => {
     const query = `
         call incomeABM(?, ?, ?, ?, ?);
     `;
-    mysqlConnection.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
+    pool.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
         if(!err){
             res.json({status: 'Income Saved'});
         } else {
@@ -48,7 +48,7 @@ router.put('/put/income/:id', (req,res) => {
     const query = `
         call incomeABM(?, ?, ?, ?, ?);
     `;
-    mysqlConnection.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
+    pool.query(query, [id, concept, amount, date, type], (err, rows, fields) => {
         if(!err) {
             res.json({status: 'Income Updated'});
         } else {
@@ -59,7 +59,7 @@ router.put('/put/income/:id', (req,res) => {
 
 router.delete('/delete/income/:id', (req,res) => {
     const { id } = req.params;
-    mysqlConnection.query('delete from income where id = ?', [id], (err, rows, fields) => {
+    pool.query('delete from income where id = ?', [id], (err, rows, fields) => {
         if(!err){
             res.json({status: 'Income Deleted'});
         } else {
