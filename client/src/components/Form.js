@@ -114,12 +114,12 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
           </Form.Group>
           <Form.Group as={Col} md="10" controlId="validationCustom03">
             <Form.Label>Type</Form.Label>
-            <Form.Control as="select" name = "type" ref={register({
+            <Form.Control as="select" name = "type" translate="no" ref={register({
                 required: true
             })}>
                 <option disabled>Choose a type of operation</option>
-                <option translate="no" id="income">Income</option>
-                <option translate="no" id="expenses">Expenses</option>
+                <option id="income">Income</option>
+                <option id="expenses">Expenses</option>
             </Form.Control>
           </Form.Group>
           <Button className="col-8" type="submit">Add new movement</Button>
