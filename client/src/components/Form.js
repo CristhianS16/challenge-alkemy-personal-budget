@@ -114,7 +114,7 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
           </Form.Group>
           <Form.Group as={Col} md="10" controlId="validationCustom03">
             <Form.Label>Type</Form.Label>
-            <Form.Control as="select" name = "type" translate="no" ref={register({
+            <Form.Control as="select" name = "type" ref={register({
                 required: true
             })}>
                 <option disabled>Choose a type of operation</option>

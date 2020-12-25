@@ -128,8 +128,8 @@ const EditOperation = ({ setTitle }) => {
                 <option value="" disabled>
                   Choose a type of operation
                 </option>
-                <option translate="no" value="income" disabled>Income</option>
-                <option translate="no" value="expenses" disabled>Expenses</option>
+                <option value="income" disabled>Income</option>
+                <option value="expenses" disabled>Expenses</option>
               </Form.Control>
             </Form.Group>
             <Button className="col-8" type="submit">
