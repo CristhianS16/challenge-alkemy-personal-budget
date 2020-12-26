@@ -9,6 +9,7 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
     const { register, handleSubmit, errors} = useForm();
     
     const onSubmit = data => {
+      setViewSpinner(true);
       const {concept, amount, date, type} = data;
       // The component Form.Control substract one day to the date, so with momentJS i can add 1 day for resolve it.
       const dateFormat = moment(date).add(1, 'd').format('DD/MM/YYYY');
@@ -28,7 +29,6 @@ const FormComponent = ({ updateList, setUpdateList, setViewSpinner, setTotalBudg
       const totalSub = parseInt(totalBudget) - parseInt(data.amount);
       try {  
         await Axios.post(url, data);
-        setViewSpinner(true);
         setUpdateList(updateList + 1);
         type === 'income' ? setTotalBudget(totalSum) : setTotalBudget(totalSub); 
       } catch (error) {

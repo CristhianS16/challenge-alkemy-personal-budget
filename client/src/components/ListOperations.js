@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 
-const ListOperations = ({dataOperation, updateList,setUpdateList}) => {
+const ListOperations = ({dataOperation, updateList,setUpdateList, setViewSpinner}) => {
 
     return (
         dataOperation.map( operation => (
@@ -22,6 +22,7 @@ const ListOperations = ({dataOperation, updateList,setUpdateList}) => {
               }>&#x2710; Edit</button>
               <button className="btn-sm btn-danger ml-1" onClick={
                 async () => {
+                  setViewSpinner(true);
                   const url = `https://budget-server-alkemy.herokuapp.com/api/delete/${operation.type}/${operation.id}/`;
                   await Axios.delete(url);
 

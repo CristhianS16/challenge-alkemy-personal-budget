@@ -94,6 +94,7 @@ const Operations = ({ setTitle, setTotalBudget, totalBudget, viewSpinner, setVie
                     dataOperation = {dataOperation}
                     updateList = {updateList}
                     setUpdateList = {setUpdateList}
+                    setViewSpinner = {setViewSpinner}
                   /> : null
                 }
               </tbody>
