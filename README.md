@@ -24,7 +24,9 @@ After this, u can run:
 Runs the server in the development mode.\
 Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
-Now, into client folder u can run:
+Into client folder change the link [https://budget-server-alkemy.herokuapp.com/](https://budget-server-alkemy.herokuapp.com/) for the localhost [http://localhost:4000](http://localhost:4000). 
+
+Now, u can run:
 
 ### `npm start`
 
