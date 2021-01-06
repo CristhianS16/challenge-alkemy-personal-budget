@@ -1,4 +1,4 @@
-CREATE PROCEDURE `expensesCRUD`(
+CREATE PROCEDURE `expensesABM`(
 	IN _id INT,
     IN _concept VARCHAR(45),
     IN _amount INT,
