@@ -1,4 +1,4 @@
-CREATE PROCEDURE `incomeCRUD`(
+CREATE PROCEDURE `incomeABM`(
 	IN _id INT,
     IN _concept VARCHAR(45),
     IN _amount INT,
